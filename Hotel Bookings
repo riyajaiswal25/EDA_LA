@@ -1,0 +1,164 @@
+---
+title: "EDA_LA"
+output: pdf_document
+date: "2023-05-14"
+---
+
+
+
+## Analysis of Data on Hotel Bookings DataSet
+
+# Reading data(Creating a Dataframe)
+```{r}
+mydata = read.csv("C:\\Users\\riyaj\\OneDrive\\Documents\\hotel.csv")
+
+```
+
+# Performing operations on dataset
+
+```{r}
+#shows the entire data set
+mydata
+#shows the first 6 rows
+head(mydata)
+#shows the last 6 rows
+tail(mydata)
+ #shows the variable names and types
+str(mydata)
+#shows the variable names
+names(mydata)
+ #shows a list of objects that are available
+ls()
+#attaches the dataframe to the R search path, which makes it easy to access variable names
+View(mydata)
+#Gives summary of dataset
+summary(mydata)
+```
+
+# 
+
+```{r}
+#identifies center of distribution
+mean(mydata$adr)
+#List all values  of a variable with frequencies
+table(mydata$adr)
+#Gives subset of data
+subset(mydata)
+#Produces a boxplot
+boxplot(mydata$adr)
+#List all values of a variable with frequencies
+table(mydata$market_segment)
+#built-in R function that centers and/or scales the columns of a numeric matrix by default
+scale(mydata$adr)
+#Produces a boxplot
+boxplot(mydata$arrival_date_year)
+#shows a list of objects that are available
+ls()
+#shows a list of objects that are available with 'a
+ls(pattern= 'a')
+#shows the variable names and types
+str(mydata$company)
+#shows the distinct variable names and types
+unique(mydata$company)
+```
+
+##Analysing components of data
+```{r}
+#Gives no of rows
+nrow(mydata)
+#Gives no of columns
+ncol(mydata)
+cat("\nColumn:",ncol(mydata$Name))
+cumsum(mydata$adr)
+cumprod(mydata$`adr`)
+cummax(mydata$arrival_date_year)
+cummin(mydata$arrival_date_year)
+rev(mydata$agent)
+#Produces a boxplot
+boxplot(mydata$previous_cancellations)
+#Produces a boxplot
+boxplot(mydata$adults)
+#Produces a boxplot
+boxplot(mydata$total_of_special_requests)
+length(mydata)
+#Identify “center” of distribution
+median(mydata$adr)
+sum(mydata$adr)
+#Find sd of values in vector
+sd(mydata$adr)
+#Find variance of values in vector
+var(mydata$adr)
+dim(mydata)
+seq(mydata)
+rep(mydata)
+diff(mydata$adr)
+duplicated(mydata)
+exp(mydata$adr)
+log10(mydata$adr)
+mad((mydata$adr))
+pmax(mydata$adr)
+sign(mydata$lead_time)
+round(mydata$adr)
+IQR(mydata$adr)
+floor(mydata$lead_time)
+formatC(mydata$lead_time)
+identity(mydata)
+is.data.frame(mydata)
+is.name(mydata)
+lowess(mydata)
+log(mydata$adr)
+#Obtain documentation for a given R command
+help(mydata)
+#Enter data manually to a vector in R
+c(mydata)
+#Command for producing a histogram
+hist(mydata$lead_time)
+#Make a stem plot
+stem(mydata$lead_time)
+#Produces a barplot
+barplot(mydata$lead_time)
+#Produces a box Plot
+boxplot(mydata$lead_time)
+#Produces a scatterplot
+plot(mydata$lead_time)
+sample(mydata$lead_time)
+dbinom(0,5, .5)
+sum(dbinom(0:2, 5, .5))
+pbinom(2, 5, .5)
+table(rbinom(10000, 5, .5)) / 10000
+binom.test(29, 200, .21)
+prop.test(29, 200, .21)
+1 - pchisq(3.1309, 5)
+pchisq(3.1309, df=5, lower.tail=F)
+qchisq(c(.001,.005,.01,.025,.05,.95,.975,.99,.995,.999), 2) 
+qchisq(c(.999,.995,.99,.975,.95,.05,.025,.01,.005,.001), 2, lower.tail=F)
+observedCounts = c(35, 27, 33, 40, 47, 51)
+claimedProbabilities = c(.13, .13, .14, .16, .24, .20)
+chisq.test(observedCounts, p=claimedProbabilities)
+smoke = matrix(c(51,43,22,92,28,21,68,22,9),ncol=3,byrow=TRUE)
+colnames(smoke) = c("High","Low","Middle")
+rownames(smoke) = c("current","former","never")
+smoke = as.table(smoke)
+smoke
+summary(smoke)
+prop.table(smoke)
+prop.table(smoke, 1)
+barplot(smoke,legend=T,beside=T,main='Hotel Booking Prediction')
+#tools for Poisson distributions
+dpois(2:7, 4.2)
+ppois(1, 4.2)
+data(mydata)
+#power calculations for 1- and 2-sample t
+power.t.test(n=20, delta=.1, sd=.4, sig.level=.05)
+#power calculations for 1- and 2-sample t
+power.t.test(delta=.1, sd=.4, sig.level=.05, power=.8)
+data(mydata)
+#Command for producing a histogram
+hist(mydata$stays_in_week_nights)
+#Command for producing a histogram
+hist(mydata$stays_in_weekend_nights)
+#Lists memory contents
+ls(mydata)
+class(mydata)
+
+```
